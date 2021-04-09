@@ -9,9 +9,9 @@ const sqlite3 = require("sqlite3");
 const pathLoc = path.join(__dirname, "covid19India.db");
 let database = null;
 
-const InitializeDBAndServer = () => {
+const InitializeDBAndServer =async () => {
   try {
-    database = open({
+    database =await open({
       filename: pathLoc,
       driver: sqlite3.Database,
     });
